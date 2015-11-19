@@ -28,15 +28,19 @@ $(document).ready(function(){
 	
 	// Retrieve data and reload plot every 5 seconds.
 	setInterval(function(){ 
-		// If the "Plots" navigation is active
-		if( $('#nav-Plots').hasClass('active') ){
-			// Get id of selected data
-			var activeIconID = $('.data-select.active').attr('id');
-			var id_array = activeIconID.split('-');
-			var active_object_id = id_array[1];
-			var active_stream_id = id_array[2];
-			// Reload plot and export
-			reloadPlotAndExport( active_object_id, active_stream_id );
+		try{
+			// If the "Plots" navigation is active
+			if( $('#nav-Plots').hasClass('active') ){
+				// Get id of selected data
+				var activeIconID = $('.data-select.active').attr('id');
+				var id_array = activeIconID.split('-');
+				var active_object_id = id_array[1];
+				var active_stream_id = id_array[2];
+				// Reload plot and export
+				reloadPlotAndExport( active_object_id, active_stream_id );
+			}
+		}catch(err){
+			// Nothing
 		}
 	}, 5000);
 	
