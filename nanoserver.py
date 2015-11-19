@@ -193,8 +193,5 @@ if __name__ == '__main__':
     '''
 # Start the app
 if __name__ == '__main__':
-    import socket
-    my_ip = str(socket.gethostbyname(socket.gethostname()))
-    print
-    print "* Running on the local network at http://"+my_ip+":5000/"
-    app.run(host='0.0.0.0')
+
+    app.run(host='0.0.0.0',port=8080)
