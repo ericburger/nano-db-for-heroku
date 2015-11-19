@@ -19,10 +19,11 @@ class ConnectDB:
     db_details = {
         'name':'nanodb',
         'prefix':'nano_',
-        'type':'PostgreSQL'
+        'type':'PostgreSQL',
+        'login':None
     }
     debug_mode = True
-    
+
     '''
     Print Messages
     '''
@@ -59,9 +60,10 @@ class ConnectDB:
                         host=url.hostname,
                         port=url.port
                     )
-
+            
                 return [True,conn]
-        except:    
+        except:
+            self.debug( sys.exc_info() )
             pass
   
         return [False,None]
