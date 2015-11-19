@@ -19,7 +19,7 @@ class ConnectDB:
     db_details = {
         'name':'nanodb',
         'prefix':'nano_',
-        'type':'PostgreSQL',
+        'type':'PostgreSQL', # Options: PostgreSQL or SQLite
         'login':None
     }
     debug_mode = True
